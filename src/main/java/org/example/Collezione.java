@@ -50,4 +50,14 @@ public class Collezione {
         gioco.setAnnoPubblicazione(newGame.getAnnoPubblicazione());
         gioco.setTitolo(newGame.getTitolo());
     }
+
+     void statistiche() {
+        int numVideogiochi = 0;
+        int giochiDaTavolo = 0;
+
+        numVideogiochi = listaGiochi.stream().filter(gioco -> gioco instanceof Videogioco).toList().size();
+        giochiDaTavolo = listaGiochi.stream().filter(gioco -> gioco instanceof GiocoDaTavolo).toList().size();
+
+        System.out.println("Il gioco con il prezzo più alto è quello con prezzo di: " + listaGiochi.stream().map(item -> (int)item.getPrezzo()).max(Integer::compare) + " euro!");
+    }
 }
