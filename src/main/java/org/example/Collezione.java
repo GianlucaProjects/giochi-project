@@ -60,4 +60,12 @@ public class Collezione {
 
         System.out.println("Il gioco con il prezzo più alto è quello con prezzo di: " + listaGiochi.stream().map(item -> (int)item.getPrezzo()).max(Integer::compare) + " euro!");
     }
+
+    public List<Gioco> getListaGiochi() {
+        return listaGiochi;
+    }
+
+    public void setListaGiochi(List<Gioco> listaGiochi) {
+        this.listaGiochi = listaGiochi;
+    }
 }
